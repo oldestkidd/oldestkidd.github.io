@@ -77,6 +77,7 @@
       <nav class="nav" id="primary-nav" aria-label="Primary">
         <a class="nav__link" href="#work">Work</a>
         <a class="nav__link" href="#about">About</a>
+        <a class="nav__link" href="#faq">FAQ</a>
         <a class="nav__link" href="#contact">Contact</a>
         <a class="btn btn--small nav__cta" href="mailto:jumaambago2021@gmail.com">Email me</a>
         <a class="nav__mobile-cv" href="assets/jumaa-majani-cv.pdf" download>Download résumé (PDF)</a>
@@ -407,11 +408,75 @@
       </div>
     </section>
 
+    <section class="faq" id="faq">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">03 / FAQ</p>
+          <div>
+            <h2>Questions worth asking.</h2>
+            <p class="section-lede">Short answers to what clients and hiring teams usually ask before a build starts.</p>
+          </div>
+        </div>
+
+        <div class="faq__list" data-reveal>
+          <details class="faq__item">
+            <summary>
+              <span>Can I see the products live?</span>
+              <span class="faq__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq__body">
+              <p>Several products run on private business data, so instead of open links I give guided walkthroughs. Email me and we can schedule one — most take about twenty minutes.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>
+              <span>What does your stack look like?</span>
+              <span class="faq__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq__body">
+              <p>React 19 and Next.js on the front end, Django REST or Express for APIs, PostgreSQL with Prisma for data, and Flutter when a project needs a native-feeling mobile app. Dashboards and reports lean on SQL, Power BI and Tableau.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>
+              <span>Are you available for contract or full-time work?</span>
+              <span class="faq__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq__body">
+              <p>Both. I take on full-time roles and scoped contract builds — new products, rescue work on systems that have outgrown their first version, and ongoing maintenance. <a href="mailto:jumaambago2021@gmail.com?subject=Availability">Send a short brief</a> and I'll reply with a scope and timeline.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>
+              <span>Do you only work with Tanzanian businesses?</span>
+              <span class="faq__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq__body">
+              <p>I'm based in Dar es Salaam and work remote-first across East Africa and beyond. I keep a UTC+3 schedule with several overlapping hours for European and Asian clients.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>
+              <span>How do you handle slow connections and offline use?</span>
+              <span class="faq__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq__body">
+              <p>Mobile-first layouts, light payloads and honest empty states. Where the use case calls for it — like ShambaSmart — the app is offline-first with local storage and sync, and the interface is built Swahili-first rather than translated afterwards.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <section class="contact" id="contact">
       <div class="container">
         <div class="contact__panel" data-reveal>
           <div class="contact__glow" aria-hidden="true"></div>
-          <p class="eyebrow">03 / Contact</p>
+          <p class="eyebrow">04 / Contact</p>
           <h2>Have a product that needs to work in the real world?</h2>
           <p class="contact__lede">I'm open to full-time and contract work — building web and mobile products, fixing systems that have outgrown their first version, and long-term product work. The fastest way to reach me is email.</p>
 
@@ -454,6 +519,7 @@
     <div class="container footer__inner">
       <p>© <span id="year">2026</span> Jumaa Majani. Built in Dar es Salaam.</p>
       <p class="footer__build">Vanilla HTML, CSS &amp; JavaScript · no build step</p>
+      <p class="footer__updated">Last updated <time datetime="2026-11-28">28 November 2026</time></p>
       <a href="#top" class="footer__top">Back to top <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
     </div>
   </footer>

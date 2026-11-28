@@ -6,3 +6,11 @@
 .project {
   animation: none !important;
 }
+
+.project__shot img {
+  opacity: 1 !important;
+}
+
+.project__shot::after {
+  display: none !important;
+}

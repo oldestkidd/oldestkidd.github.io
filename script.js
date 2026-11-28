@@ -213,6 +213,11 @@
           copyStatus.textContent = "";
         }, 2400);
       }
+
+      if (copied) {
+        copyButton.classList.add("is-copied");
+        window.setTimeout(() => copyButton.classList.remove("is-copied"), 600);
+      }
     });
   }
 
@@ -234,4 +239,51 @@
       });
     });
   }
+
+  /* ---------- Image loading skeletons ---------- */
+
+  document.querySelectorAll(".project__shot").forEach((shot) => {
+    const img = shot.querySelector("img");
+    if (!img) return;
+    const markLoaded = () => shot.classList.add("is-loaded");
+    if (img.complete && img.naturalWidth > 0) {
+      markLoaded();
+    } else {
+      img.addEventListener("load", markLoaded, { once: true });
+      img.addEventListener("error", markLoaded, { once: true });
+    }
+  });
+
+  /* ---------- UTM: capture incoming, tag outbound ---------- */
+
+  const utmKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
+
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const incoming = {};
+    utmKeys.forEach((key) => {
+      const value = params.get(key);
+      if (value) incoming[key] = value;
+    });
+    if (Object.keys(incoming).length) {
+      sessionStorage.setItem("portfolio:utm", JSON.stringify(incoming));
+    }
+  } catch {
+    /* storage can be unavailable in private modes */
+  }
+
+  document.querySelectorAll('a[href^="http"]').forEach((link) => {
+    let url;
+    try {
+      url = new URL(link.href);
+    } catch {
+      return;
+    }
+    if (url.hostname === window.location.hostname) return;
+    if (url.searchParams.has("utm_source")) return;
+    url.searchParams.set("utm_source", "portfolio");
+    url.searchParams.set("utm_medium", "referral");
+    url.searchParams.set("utm_campaign", "outbound");
+    link.href = url.toString();
+  });
 })();
